@@ -1,4 +1,4 @@
-package com.dio.myapplication
+package com.dio.myapplication.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,5 +13,9 @@ class DetailActivity : AppCompatActivity() {
 
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 }

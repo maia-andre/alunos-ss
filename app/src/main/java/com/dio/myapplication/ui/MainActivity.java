@@ -1,4 +1,4 @@
-package com.dio.myapplication;
+package com.dio.myapplication.ui;
 
 import android.os.Bundle;
 
@@ -17,5 +17,21 @@ public class MainActivity extends AppCompatActivity{
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        setupMatchsList();
+        setupMatchsRefresh();
+        setupFloatingActionButton();
+    }
+
+    private void setupMatchsList() {
+        //TODO Listar as partidas, consumindo a API.
+    }
+
+    private void setupMatchsRefresh() {
+        //TODO Atualizar as partidas na ação  de swipe.
+    }
+
+    private void setupFloatingActionButton() {
+        //TODO Criar evento de click e simulação de partidas.
     }
 }
