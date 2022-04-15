@@ -2,4 +2,5 @@
     <string name="app_name">Matchs</string>
     <string name="TODO" translatable="false">To do</string>
     <string name="Versus" translatable="false">X</string>
+    <string name="error_api">Unexpected error</string>
 </resources>
