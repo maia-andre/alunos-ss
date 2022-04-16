@@ -1,7 +1,10 @@
 package com.dio.myapplication.domain
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Team (
 
     @SerializedName("nome")
@@ -9,6 +12,7 @@ data class Team (
     @SerializedName("forca")
     val stars: Int,
     @SerializedName("imagem")
-    val image: String
+    val image: String,
+    var score: Int?
 
-    )
+) : Parcelable
