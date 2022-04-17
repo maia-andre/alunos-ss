@@ -16,85 +16,34 @@
             android:layout_height="@dimen/team_img_size"
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_default"
             android:contentDescription="@string/TODO"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/nameHomeTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
             android:layout_marginTop="@dimen/margin_default"
-            android:layout_marginBottom="@dimen/margin_default"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/logoHomeTeam"
-            app:layout_constraintStart_toStartOf="@id/logoHomeTeam"
-            app:layout_constraintTop_toBottomOf="@id/logoHomeTeam"
-            tools:layout_editor_absoluteX="45dp"
-            tools:layout_editor_absoluteY="155dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/logoHomeTeam"
             tools:text="Home Team" />
 
         <TextView
             android:id="@+id/scoreHomeTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
             android:layout_marginStart="@dimen/margin_default"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintBottom_toBottomOf="@id/logoHomeTeam"
             app:layout_constraintStart_toEndOf="@id/logoHomeTeam"
-            app:layout_constraintTop_toTopOf="@id/logoHomeTeam"
+            app:layout_constraintTop_toTopOf="@id/nameHomeTeam"
             tools:text="99" />
-
-        <ImageView
-            android:id="@+id/logoAwayTeam"
-            android:layout_width="@dimen/team_img_size"
-            android:layout_height="@dimen/team_img_size"
-            android:layout_marginTop="@dimen/margin_default"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:contentDescription="@string/TODO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/nameAwayTeam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_default"
-            android:layout_marginBottom="@dimen/margin_default"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/logoAwayTeam"
-            app:layout_constraintStart_toStartOf="@id/logoAwayTeam"
-            app:layout_constraintTop_toBottomOf="@id/logoAwayTeam"
-            tools:layout_editor_absoluteX="302dp"
-            tools:layout_editor_absoluteY="152dp"
-            tools:text="Away Team" />
-
-        <TextView
-            android:id="@+id/scoreAwayTeam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toBottomOf="@id/logoAwayTeam"
-            app:layout_constraintEnd_toStartOf="@id/logoAwayTeam"
-            app:layout_constraintTop_toTopOf="@id/logoAwayTeam"
-            tools:layout_editor_absoluteX="210dp"
-            tools:layout_editor_absoluteY="66dp"
-            tools:text="99" />
-
-        <TextView
-            android:id="@+id/ic_versus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/logoHomeTeam"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/logoHomeTeam"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="68dp"
-            android:text="@string/Versus" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
