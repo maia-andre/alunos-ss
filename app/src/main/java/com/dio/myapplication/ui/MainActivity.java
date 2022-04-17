@@ -7,12 +7,11 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.dio.myapplication.R;
-import com.dio.myapplication.data.MatchesAPI;
+import com.dio.myapplication.data.AlunosAPI;
 import com.dio.myapplication.databinding.ActivityMainBinding;
-import com.dio.myapplication.domain.Match;
+import com.dio.myapplication.domain.Aluno;
 import com.dio.myapplication.ui.adapter.MatchesAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -29,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding binding;
-    private MatchesAPI matchesAPI;
+    private AlunosAPI alunosAPI;
     private MatchesAdapter matchesAdapter;
 
     @Override
@@ -47,11 +46,11 @@ public class MainActivity extends AppCompatActivity{
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://maia-andre.github.io/matches-simulator-api/")
+                .baseUrl("https://maia-andre.github.io/alunos-ss-api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        matchesAPI = retrofit.create(MatchesAPI.class);
+        alunosAPI = retrofit.create(AlunosAPI.class);
     }
 
     private void setupMatchsList() {
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity{
                     super.onAnimationEnd(animation);
                     Random random = new Random();
                     for (int i = 0; 1 < matchesAdapter.getItemCount(); i++){
-                        Match match = matchesAdapter.getMatches().get(i);
+                        Aluno match = matchesAdapter.getAlunos().get(i);
                         match.getHomeTeam().setScore(random.nextInt(match.getHomeTeam().getStars() + 1));
                         match.getAwayTeam().setScore(random.nextInt(match.getAwayTeam().getStars() + 1));
                         matchesAdapter.notifyItemChanged(i);
@@ -91,11 +90,11 @@ public class MainActivity extends AppCompatActivity{
 
     private void findMatchesFromApi() {
         binding.swipeRefresh.setRefreshing(true);
-        matchesAPI.getMatches().enqueue(new Callback<List<Match>>() {
+        alunosAPI.getAlunos().enqueue(new Callback<List<Aluno>>() {
             @Override
-            public void onResponse(Call<List<Match>> call, Response<List<Match>> response) {
+            public void onResponse(Call<List<Aluno>> call, Response<List<Aluno>> response) {
                 if(response.isSuccessful()){
-                    List<Match> matches = response.body();
+                    List<Aluno> matches = response.body();
                     matchesAdapter = new MatchesAdapter(matches);
                     binding.rvMatches.setAdapter(matchesAdapter);
                 } else {
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity{
             }
 
             @Override
-            public void onFailure(Call<List<Match>> call, Throwable t) {
+            public void onFailure(Call<List<Aluno>> call, Throwable t) {
                 showErrorMessage();
                 binding.swipeRefresh.setRefreshing(false);
             }

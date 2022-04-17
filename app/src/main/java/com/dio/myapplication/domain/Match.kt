@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Match (
+data class Aluno (
 
     @SerializedName("descricao")
     val description: String,

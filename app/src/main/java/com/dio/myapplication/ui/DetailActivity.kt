@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.dio.myapplication.databinding.ActivityDetailBinding
-import com.dio.myapplication.domain.Match
+import com.dio.myapplication.domain.Aluno
 
 class DetailActivity : AppCompatActivity() {
 
     object Extras {
-        const val MATCH = "EXTRA_MATCH"
+        const val ALUNO = "EXTRA_ALUNO"
     }
 
     private lateinit var binding: ActivityDetailBinding
@@ -27,7 +27,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun loadMatchFromExtra() {
-        intent?.extras?.getParcelable<Match>(Extras.MATCH)?.let {
+        intent?.extras?.getParcelable<Aluno>(Extras.ALUNO)?.let {
             Glide.with(this).load(it.place.image).into(binding.ivPlace)
             supportActionBar?.title = it.place.name
 
@@ -40,12 +40,6 @@ class DetailActivity : AppCompatActivity() {
                 binding.tvHomeTeamScore.text = it.homeTeam.score.toString()
             }
 
-            Glide.with(this).load(it.awayTeam.image).into(binding.ivAwayTeam)
-            binding.tvAwayTeamName.text = it.awayTeam.name
-            //TODO Fix rating bar details
-            if (it.homeTeam.score != null) {
-                binding.tvAwayTeamScore.text = it.awayTeam.score.toString()
-            }
         }
     }
 }

@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/logoHomeTeam"
+            android:id="@+id/fotoAluno"
             android:layout_width="@dimen/team_img_size"
             android:layout_height="@dimen/team_img_size"
             android:layout_marginStart="@dimen/margin_default"
@@ -30,7 +30,7 @@
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginTop="@dimen/margin_default"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/logoHomeTeam"
+            app:layout_constraintStart_toEndOf="@id/fotoAluno"
             tools:text="Home Team" />
 
         <TextView
@@ -40,10 +40,19 @@
             android:layout_marginTop="@dimen/margin_default"
             android:layout_marginStart="@dimen/margin_default"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@id/logoHomeTeam"
-            app:layout_constraintStart_toEndOf="@id/logoHomeTeam"
+            app:layout_constraintBottom_toBottomOf="@id/fotoAluno"
+            app:layout_constraintStart_toEndOf="@id/fotoAluno"
             app:layout_constraintTop_toTopOf="@id/nameHomeTeam"
             tools:text="99" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/margin_default" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
