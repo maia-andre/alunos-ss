@@ -24,7 +24,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/nameHomeTeam"
+            android:id="@+id/nomeAluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_default"
@@ -34,7 +34,7 @@
             tools:text="Home Team" />
 
         <TextView
-            android:id="@+id/scoreHomeTeam"
+            android:id="@+id/faculdadeAluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
@@ -42,10 +42,11 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintBottom_toBottomOf="@id/fotoAluno"
             app:layout_constraintStart_toEndOf="@id/fotoAluno"
-            app:layout_constraintTop_toTopOf="@id/nameHomeTeam"
+            app:layout_constraintTop_toTopOf="@id/nomeAluno"
             tools:text="99" />
 
         <CheckBox
+            android:id="@+id/checkAluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

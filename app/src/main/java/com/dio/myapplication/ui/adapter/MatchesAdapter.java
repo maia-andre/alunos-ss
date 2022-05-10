@@ -43,9 +43,9 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
 
         // Adapta os dados da partida (recuperada da API) para o nosso layout.
         Glide.with(context).load(aluno.getHomeTeam().getImage()).circleCrop().into(holder.binding.fotoAluno);
-        holder.binding.nameHomeTeam.setText(aluno.getHomeTeam().getName());
+        holder.binding.nomeAluno.setText(aluno.getHomeTeam().getName());
         if (aluno.getHomeTeam().getScore() != null){
-            holder.binding.scoreHomeTeam.setText(String.valueOf(aluno.getHomeTeam().getScore()));
+            holder.binding.faculdadeAluno.setText(String.valueOf(aluno.getHomeTeam().getScore()));
         }
 
         holder.itemView.setOnClickListener(view -> {

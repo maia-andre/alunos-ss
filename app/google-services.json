@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "979417181240",
+    "project_id": "universitarios-sao-seba",
+    "storage_bucket": "universitarios-sao-seba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979417181240:android:6f96dc66a73acf9d108acd",
+        "android_client_info": {
+          "package_name": "com.dio.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979417181240-9hvfpk1mu2umsp0nrbfkajm2ucovucdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdtGYmBghTppuHEJFlf1xIMCbCLqwhhf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979417181240-9hvfpk1mu2umsp0nrbfkajm2ucovucdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
